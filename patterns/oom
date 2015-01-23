@@ -1,0 +1,3 @@
+OOMKILLER1 Kill process %{INT:oom_pid} \(%{DATA:oom_processname}\) score %{INT:oom_score}
+OOMKILLER2 Killed process %{INT:oom_pid}, UID %{INT:oom_uid}, \(%{DATA:oom_processname}\) total-vm:%{INT:oom_total_vm_kb}kB, anon-rss:%{INT:oom_anon_rss_kb}kB, file-rss:%{INT:oom_file_rss_kb}
+OOMKILLER %{OOMKILLER1}|%{OOMKILLER2}

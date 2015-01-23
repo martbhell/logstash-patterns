@@ -1,0 +1,6 @@
+OSSECLOG TIMESTAMP:%{NUMBER:ossec_timestamp} FTELL:%{NUMBER:ossec_ftell} RULEALERT:%{DATA:ossec_rulealert} HOSTNAME:\(%{DATA:ossec_hostname}\) %{IP:ossec_ip}->%{DATA:ossec_type} LOCATION:%{DATA:ossec_location} RULEID:%{NUMBER:ossec_rule_id} RULELEVEL:%{DATA:ossec_rule_level} RULECOMMENT:%{GREEDYDATA:ossec_rule_comment} SRCIP:(None|%{IP:IP}|%{DATA:ossec_client_hostname}) DSTUSER:%{DATA:ossec_dstuser} RULEGROUP:%{DATA:ossec_rule_group} FULLLOG:%{GREEDYDATA:ossec_fulllog}"
+OSSECLOGCOLLECTOR TIMESTAMP:%{NUMBER:ossec_timestamp} FTELL:%{NUMBER:ossec_ftell} RULEALERT:%{DATA:ossec_rulealert} HOSTNAME:%{DATA:ossec_hostname} LOCATION:%{DATA:ossec_location} RULEID:%{NUMBER:ossec_rule_id} RULELEVEL:%{DATA:ossec_rule_level} RULECOMMENT:%{GREEDYDATA:ossec_rule_comment} SRCIP:(None|%{IP:IP}|%{DATA:ossec_client_hostname}) DSTUSER:%{DATA:ossec_dstuser} RULEGROUP:%{DATA:ossec_rule_group} FULLLOG:%{GREEDYDATA:ossec_fulllog}"
+
+OSSECMD5SUM Old md5sum was: '%{BASE16NUM:ossec_old_md5}'\\nNew md5sum is : '%{BASE16NUM:ossec_new_md5}'
+OSSECSHA1SUM Old sha1sum was: '%{BASE16NUM:ossec_old_sha1}'\\nNew sha1sum is : '%{BASE16NUM:ossec_new_sha1}'
+OSSECSYSCHECK for: '%{DATA:ossec_syscheck_path}'\\n(Size changed from '%{NUMBER:ossec_old_size}' to '%{NUMBER:ossec_new_size}'\\n|)%{OSSECMD5SUM}\\n%{OSSECSHA1SUM}

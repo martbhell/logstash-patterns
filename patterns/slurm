@@ -1,0 +1,10 @@
+SLURM_TIME \[%{TIMESTAMP_ISO8601:slurm_time}\]
+
+STEPID StepId=%{INT:slurm_jobid}\.%{INT:slurm_stepid}
+JOBID JobId=%{NUMBER:slurm_jobid}
+STEPORJOBID (%{JOBID}|%{STEPID})
+
+EXITCODE exit code=%{INT:slurm_exitcode}
+COMPLETINGJOB completing job %{NUMBER:slurm_jobid}
+USEC usec=%{NUMBER:slurm_usec}
+SCHEDALLOCATE NodeList=%{WORD:slurm_nodelist} \#CPUs=%{INT:slurm_cpus}

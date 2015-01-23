@@ -1,0 +1,1 @@
+APACHESSL \[%{HTTPDATE:apachedate}\] %{IPORHOST:clientip} %{DATA:cipher} "(%{WORD:verb}) %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}" (%{NUMBER:bytes}|-)

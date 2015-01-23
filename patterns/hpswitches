@@ -1,0 +1,6 @@
+HPSWGEN 10%{DATA:area}\/%{INT:session}/%{DATA:function}: %{GREEDYDATA:message}
+HPSWPORT %{DATA:speed}%{NUMBER:slot}/%{NUMBER:module}/%{NUMBER:port}
+HPSWIFNET %{HPSWPORT} link status is %{WORD:status}
+HPSWSTPCHANGE Instance %{INT:stp_instance}'s port %{HPSWPORT} was notified of a %{WORD:stp_change} change.$
+HPSWSTPSTATECHANGE Instance %{INT:stp_instance}'s port %{HPSWPORT} has been set to %{WORD:stp_change} state.$
+HPSWIFNETTRAP Trap %{DATA:trap}: Interface %{NUMBER:interface} is %{WORD:status}, ifAdminStatus is %{INT:ifadminstatus}, ifOperStatus is %{INT:ifoperstatus}
